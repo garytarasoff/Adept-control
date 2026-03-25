@@ -76,6 +76,25 @@ class RobotGUI(QMainWindow):
 
         # --- 2. Tabbed Interface (Middle) ---
         self.tabs = QTabWidget()
+        self.tabs.setStyleSheet("""
+            QTabBar::tab {
+                background: #e0e0e0;
+                color: black;
+                padding: 6px 12px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid #c0c0c0;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+            }
+            QTabBar::tab:selected {
+                background: white;
+                border-bottom-color: white;
+            }
+            QTabBar::tab:hover {
+                background: #d0d0d0;
+            }
+        """)
         main_layout.addWidget(self.tabs)
 
         # Tab 1: Main (renamed from Control & Operations)
