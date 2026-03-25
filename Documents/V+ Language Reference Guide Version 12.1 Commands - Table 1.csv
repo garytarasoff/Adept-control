@@ -1,0 +1,62 @@
+Section,Command Name,Type,Function Description,Syntax,Source
+Section 1,ABORT,Monitor Command,Terminate execution of an executing program task.,ABORT task_num,1
+Section 1,ALIGN,Monitor Command,Align the robot tool Z axis with the nearest world axis using DO.,DO ALIGN,1
+Section 1,BASE,Monitor Command,Translate and rotate the World reference frame relative to the robot.,"BASE X_shift, Y_shift, Z_shift, Z_rotation",1
+Section 1,CALIBRATE,Monitor Command,Initialize the robot positioning system with the robot’s current position or start calibration of joints.,"CALIBRATE mode, status or .CALIBRATE",1-3
+Section 1,DEFAULT,Monitor Command,Sets up the default disk drive designator.,DEFAULT D=x:,3
+Section 1,ENABLE DRY.RUN,Monitor Command,Places the controller into dry-run mode.,ENABLE DRY.RUN,3
+Section 1,ENABLE POWER,Monitor Command,Turns on power to the robot/brings up amplifiers and servos.,.ENABLE POWER,"2, 3"
+Section 1,EXECUTE,Monitor Command,Starts the execution of a program.,EXECUTE program_name,3
+Section 1,FDIR,Monitor Command,Creates a directory on the disk.,Fdir/c \directory\,4
+Section 1,FORMAT,Monitor Command,Formats a floppy disk or hard disk.,Format drive:/qualifier,"2, 4"
+Section 1,ID,Monitor Command,Display information identifying the configuration of the current system.,ID,1
+Section 1,IO,Monitor Command,Used to monitor the system binary signals.,IO signal_group,2
+Section 1,LOAD,Monitor Command,Loads a program from a disk drive.,LOAD x:filename,3
+Section 1,PROCEED,Monitor Command,Resumes program execution after a pause.,PROCEED,3
+Section 1,SPEED,Monitor Command,Sets the monitor speed of the controller.,SPEED value,3
+Section 1,STATUS,Monitor Command,View the current status of the system.,.STATUS,2
+Section 1,WHERE,Monitor Command,Prints a continuous display of the manipulator arm position.,.WHERE 1,2
+Section 2,.END,Program Instruction,Mark the end of a V+ program.,.END,1
+Section 2,ABORT,Program Instruction,Terminate execution of a program task.,ABORT task_num,1
+Section 2,ABOVE,Program Instruction,Request a change in the robot configuration during the next motion so that the elbow is above the line from the shoulder to the wrist.,ABOVE,1
+Section 2,ABS,Function,Return absolute value.,ABS (value),1
+Section 2,ACCEL,Program Instruction,Set acceleration and deceleration for robot motions.,"ACCEL ( profile ) acceleration , deceleration",1
+Section 2,ACCEL,Function,Return the current setting for robot acceleration or deceleration setting.,ACCEL (select ),1
+Section 2,AIO.IN,Function,Read a channel from one of the analog IO boards.,"AIO.IN (channel , gain )",1
+Section 2,AIO.INS,Function,Test whether an analog input or output channel is installed.,AIO.INS (channel),1
+Section 2,AIO.OUT,Program Instruction,Write to a channel on one of the analog IO boards.,AIO.OUT channel = value,1
+Section 2,ALIGN,Program Instruction,Align the robot tool Z axis with the nearest world axis.,ALIGN,1
+Section 2,ALTER,Program Instruction,Specify the magnitude of the real-time path modification.,"ALTER (control ) Dx, Dy, Dz, Rx, Ry, Rz",1
+Section 2,ALTOFF,Program Instruction,Terminate real-time path-modification mode.,ALTOFF,1
+Section 2,ALTON,Program Instruction,Enable real-time path-modification mode.,ALTON (lun ) mode,1
+Section 2,AND,Function,Perform the logical AND operation on two values.,... value AND value ...,1
+Section 2,ANY,Program Instruction,Signal the beginning of an alternative group of instructions for the CASE structure.,ANY,1
+Section 2,APPRO,Program Instruction,Start a robot motion toward a location defined relative to specified location.,"APPRO location, distance",1
+Section 2,APPROS,Program Instruction,Start a robot motion toward a location defined relative to specified location using straight-line motion.,"APPROS location, distance",1
+Section 2,ASC,Function,Return an ASCII character value from within a string.,"ASC (string , index )",1
+Section 2,ATAN2,Function,Return the size of the angle that has its trigonometric tangent equal to value_1/value_2.,"ATAN2 (value_1, value_2)",1
+Section 2,ATTACH,Program Instruction,Make a device available for use by the application program.,"ATTACH (lun, mode ) $device",1
+Section 2,AUTO,Program Instruction,Declare temporary variables that are automatically created on the program stack.,"AUTO type variable , ..., variable",1
+Section 2,BAND,Function,Perform the binary AND operation on two values.,... value BAND value ...,1
+Section 2,BASE,Program Instruction,Translate and rotate the World reference frame relative to the robot.,"BASE X_shift, Y_shift, Z_shift, Z_rotation",1
+Section 2,BASE,Function,Return the transformation value representing translation and rotation set by the last BASE command.,BASE,1
+Section 2,BCD,Function,Convert a real value to Binary Coded Decimal (BCD) format.,BCD (value),1
+Section 2,BELOW,Program Instruction,Request a change in the robot configuration during the next motion so that the elbow is below the line from the shoulder to the wrist.,BELOW,1
+Section 2,BITS,Program Instruction,Set or clear a group of digital signals based on a value.,"BITS first_sig , num_sigs = value",1
+Section 2,BITS,Function,Read multiple digital signals and return the value corresponding to the binary bit pattern. Can also be used as a monitor command or program instruction.,"BITS (first_sig , num_sigs )","1, 2"
+Section 2,BMASK,Function,Create a bit mask by setting individual bits.,"BMASK (bit , bit , ..., bit )",1
+Section 2,BOR,Function,Perform the binary OR operation on two values.,... value BOR value ...,1
+Section 2,BRAKE,Program Instruction,Abort the current robot motion.,BRAKE,1
+Section 2,BREAK,Program Instruction,Suspend program execution until the current motion completes.,BREAK,1
+Section 2,BSTATUS,Function,Return information about the status of the conveyor tracking system.,BSTATUS,1
+Section 2,BXOR,Function,Perform the binary exclusive-OR operation on two values.,... value BXOR value ...,1
+Section 2,CALIBRATE,Program Instruction,Initialize the robot positioning system with the robot’s current position.,"CALIBRATE mode, status",1
+Section 2,CALL,Program Instruction,Suspend execution of the current program and continue execution with a subroutine or subprogram.,CALL program( arg_list ),"1, 5"
+Section 2,CALLP,Program Instruction,Call a program given a pointer to the program in memory.,CALLP var(arg_list),1
+Section 2,CALLS,Program Instruction,Suspend execution of the current program and continue execution with a subroutine specified by a string.,CALLS string( arg_list ),1
+Section 2,CASE,Program Instruction,Initiate processing of a CASE structure by defining the value of interest.,CASE value OF,1
+Section 2,ID,Function,Return values that identify the configuration of the current system.,"ID (component , device , board )",1
+Section 2,SIG,Function,Returns the logical AND of the states of the indicated binary signals.,"SIG(signal_number, signal_number,...)",2
+Section 2,SIGNAL,Program Instruction,Turns on or off external binary output signals or internal software signals.,"SIGNAL signal_number, signal_number,...",2
+Section 2,VDISPLAY,Program Instruction,Chooses the display mode for the vision monitor.,"VDISPLAY (cam) mode, overlay",2
+Section 2,VPICTURE,Program Instruction,Causes the vision system to acquire an image.,VPICTURE (cam) mode,2
